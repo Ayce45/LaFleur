@@ -55,7 +55,7 @@ include 'connect.php';
 
     <div class="modal fade in" tabindex="1" role="dialog" id="createclient">        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="POST" action="../ajax/addAccount.php">
+                <form method="POST" action="../ajax/addAccountAdmin.php">
                     <div class="modal-header">
                         <h5 class="modal-title text-center">⚠ CREATION CLIENT ⚠</h5>
                     </div>
