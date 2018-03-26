@@ -47,18 +47,9 @@
 </div>
 
 </body>
-<script>
-    function addCart(ref,quantity, price) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "ajax/addCart.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("ref=" + ref + "&quantity=" + quantity);    
-        //console.log("ref=" + ref + "&quantity=" + quantity);
-        document.getElementById('Cart_quantity').innerHTML = parseInt(document.getElementById('Cart_quantity').innerHTML) + parseInt(quantity);
-        document.getElementById('Cart_total').innerHTML = parseInt(document.getElementById('Cart_total').innerHTML) + parseInt(price);
-    }
-</script>
 <div class="copy">
     <p> &copy; 2018 LAFLEUR. All Rights Reserved | Design by NEJE</p>
 </div>
 </html>
+
+<script type="text/javascript" src="js/script.js"></script>

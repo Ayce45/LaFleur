@@ -30,7 +30,7 @@ include 'connect.php';
                                 </thead>
 
                                 <?php
-                                $reponse = $bdd->query("SELECT * FROM clientconnu");
+                                $reponse = $bdd->query("SELECT * FROM clientconnu ORDER BY 1");
                                 while ($donnees = $reponse->fetch()) {
                                     ?>
 

@@ -48,7 +48,7 @@ logged_only();
                             </button>
                         </form>
                         <div class="logo">
-                            <h1><a href="http://localhost/PPE2/login/admin_index.php"><span class="m_1">L</span>AFLEUR | ADMIN</a></h1>
+                            <h1><a href="./"><span class="m_1">L</span>AFLEUR | ADMIN</a></h1>
                         </div>
                         <div class="menu">
                             <ul class="megamenu skyblue">

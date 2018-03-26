@@ -37,7 +37,7 @@ if ($i == 0) {
     'email' => $email,
     'pass' => $pass
     ));
-    header('Location: ../view_client.php');
+    header('Location: ../admin/view_client.php');
 } 
 
 ?>

@@ -37,7 +37,7 @@ if ($i == 0) {
     'email' => $email,
     'pass' => $pass
     ));
-    header('Location: ../index.php');
+    header('Location: ../sucessR.php');
 } 
 
 ?>
