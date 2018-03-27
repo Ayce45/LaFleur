@@ -27,6 +27,7 @@ include 'connect.php';
                                             <th>Désignation</th>
                                             <th>Prix</th>
                                             <th>Catégorie</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
 
@@ -41,6 +42,7 @@ include 'connect.php';
                                             <td><?= $donnees["pdt_designation"] ?></td>
                                             <td><?= $donnees["pdt_prix"] ?></td>
                                             <td><?= $donnees["pdt_categorie"] ?></td>
+                                            <td> <button class="btn btn-danger btn-sm"  onclick="window.location.href='deleteLigne.php?id=<?= $donnees["pdt_ref"] ?>'" data-toggle="modal"><i class="fa fa-trash-o"></i></button>	  </td>
                                         </tr>
 
                                     <?php } ?>
