@@ -3,7 +3,9 @@
 include("../connect.php");
 $delete_id=$_REQUEST['id'];
 $sql="DELETE From produit WHERE pdt_ref='$delete_id'";//delete query
-$req = $bdd-> exec($sql);
+$req= $bdd-> exec($sql);
+$sql="DELETE From contenir WHERE  produit='$delete_id'";
+$req= $bdd-> exec($sql);
 /*if($run)
 {
 //javascript function to open in the same window

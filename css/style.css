@@ -847,7 +847,7 @@ a.create:hover, .account-top input[type="submit"]:hover, .register-but form inpu
     display: block;
     text-transform: uppercase;
 }
-.register-top-grid input[type="text"], .register-top-grid input[type="password"] {
+.register-top-grid input[type="text"], .register-top-grid input[type="password"], .register-top-grid input[type="tel"], .register-top-grid input[type="email"] {
     border: 1px solid #777;
     outline-color:#FF5B36;
     width: 96%;
@@ -2010,7 +2010,7 @@ a.continue:hover{
 }
 .price-details h3 {
     color: #000;
-    font-size: 1.1em;
+    font-size: 1.5em;
     margin-bottom: 1em;
 }
 .price-details span {
@@ -2023,7 +2023,7 @@ a.continue:hover{
 .price-details span {
     width: 50%;
     float: left;
-    font-size: 0.8125em;
+    font-size: 1em;
     color: #000;
     line-height: 1.8em;
 }

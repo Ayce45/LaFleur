@@ -22,8 +22,8 @@ $a = 'c' . $str;
 
 
 //Vérification du mdp
-if ($pass != $confirm || empty($confirm) || empty($pass)) {
-    $mdp_erreur = "Votre mot de passe et votre confirmation diffèrent, ou sont vides";
+if ($pass != $confirm || empty($confirm) || empty($pass)) {    
+    header('Location: ../inscription.php');    
     $i++;
 }
 

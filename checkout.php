@@ -1,11 +1,9 @@
 <?php include 'header.php'; ?>   
-<!-- On appelle la fonction actualise() une fois la page chargée -->
 <body onload="actualise()">
     <div class="container">
         <div class="card-header bg-dark text-light">
             <div class="clearfix"></div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="box ">
@@ -15,14 +13,16 @@
                                 <table id="cart" class="table table-condensed">
                                     <thead>
                                         <tr>
-                                            <th style="width:20%"> </th>
-                                            <th style="width:40%">Product</th>
-                                            <th style="width:9%">Price</th>
-                                            <th style="width:9%">Quantity</th>
-                                            <th style="width:10%" class="text-center">Subtotal</th>
+                                            <th style="width:25%"> </th>
+                                            <th style="width:25%"></th>
+                                            <th style="width:9%">Prix</th>
+                                            <th style="width:9%">Quantité</th>
+                                            <th style="width:10%" class="text-center">Sous Total</th>
                                             <th style="width:12%"></th>
                                         </tr>
                                     </thead>
+                                    <br>
+                                    <br>
                                     <tbody class="cart-header2">      
                                         <!-- On va chercher dans la session utilisateur son panier et pour chaque article nous recherchons dans la BDD les infos le concernant -->
                                         <?php
@@ -32,7 +32,7 @@
                                                 $reponseProduit = $reponseProduit->fetch();
                                                 ?>                                      
                                                 <tr class="cart-item1 product<?= $product['ref'] ?>">     
-                                                    <td><img src="images/<?= $reponseProduit["pdt_image"] ?>.jpg" alt="..." class="img-responsive"/></td>
+                                                    <td><img src="images/<?= $reponseProduit["pdt_image"] ?>" alt="..." class="img-responsive"/></td>
                                                     <td data-th="Product">
                                                         <div class="row">                                                                    
                                                             <div class="col-sm-10">
@@ -44,14 +44,14 @@
 
                                                     <td data-th="Price" class="prix" id="pu_<?= $product['ref'] ?>"><?= $reponseProduit["pdt_prix"] ?></td>
                                                     <td data-th="Quantity">
-                                                        <input type="number" class="form-control quantite text-center" min="1" id="quantity<?= $product['ref'] ?>" value="<?= $product['quantity'] ?>">
+                                                        <input onclick="actualise()" type="number" class="form-control quantite text-center" min="1" id="quantity<?= $product['ref'] ?>" value="<?= $product['quantity'] ?>">
                                                         <input type="hidden" class="quantite-base" value="<?= $product['quantity'] ?>">
                                                     </td>
                                                     <td data-th="Subtotal" id="subtotal<?= $product['ref'] ?>" class="text-center"></td>
                                                     <td class="actions" data-th="">
-                                                        <button class="btn btn-danger btn-sm" data-target="#exampleModalLong<?= $product['ref'] ?>" data-toggle="modal" ><i class="fa fa-trash-o"></i></button>								
-                                                    </td>
-                                                </tr>  
+                                                        <button class="btn btn-sm" data-target="#exampleModalLong<?= $product['ref'] ?>" data-toggle="modal" ><i class="fa fa-trash-o"></i></button>								
+                                                    </td>                                                    
+                                                </tr>                                                
                                             <div class="modal fade in" tabindex="-1" role="dialog" id="exampleModalLong<?= $product['ref'] ?>">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -81,11 +81,9 @@
                                 <span id="isCartFilled"></span>
                             </div>
                             <div class="col-md-3 cart-total">
-                                </br>
-                                </br>
-                                <button class="btn btn-info" onclick="actualise()" style="padding: 10px 80px; margin-bottom: 28px; margin-right: 40px;"><i class="fa fa-refresh"></i></button>
-                                <button class="btn btn-danger btn-sm" data-target="#exampleModalLongAll" data-toggle="modal"  style="padding: 10px 80px; margin-bottom: 28px; margin-right: 40px;"><i class="fa fa-trash-o"></i></button>
-                                <a class="continue" href="./">Poursuivre mes achats</a>
+                                <br>
+                                <br>                                
+                                <button class="btn btn-danger btn-sm" data-target="#exampleModalLongAll" data-toggle="modal" style="padding: 10px 118px;margin-bottom: 30px;"><i class="fa fa-trash-o"></i></button>                                <a class="continue" href="./">Poursuivre mes achats</a>
                                 <div class="price-details">
                                     <h3>Récapitulatif de commande</h3>
                                     <span>Total</span>
@@ -97,8 +95,7 @@
                                     <ul class="total_price">
                                         <li class="last_price"> <h4>TOTAL</h4></li>	
                                         <li><span id="last_price">0</span></li>
-                                        <div class="clearfix"> </div>
-
+                                        <div class="clearfix"></div>
                                     </ul>
                                 </div>	
                                 </br>

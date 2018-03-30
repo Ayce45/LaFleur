@@ -65,9 +65,10 @@ session_start();
                             while ($donnees = $reponse->fetch()) {
                                 echo '<li><a class="color7" href="listpdt.php?cat=' . $donnees["cat_code"] . '">' . $donnees["cat_libelle"] . '</a></li>';
                             }
-                            ?>
+                            ?>                            
                             <li><a class="color7" href="contact.php">Contact</a></li>
                             <li><a class="color7" href="inscription.php">Inscription</a></li>
+                            <li><a class="color7" href="admin/"><i class ="fa fa-lock"></i></a></li>
                         </ul>
                     </div>
                 </div>

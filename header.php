@@ -72,6 +72,7 @@ if (!isset($_SESSION['cart'])) {
                                 ?>
                                 <li><a class="color7" href="contact.php">Contact</a></li> 
                                 <li><a class="color7" href="inscription.php">Inscription</a></li>
+                                <li><a class="color7" href="admin/"><i class ="fa fa-lock"></i></a></li>
                                                                
                             </ul>
                         </div>

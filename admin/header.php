@@ -55,7 +55,7 @@ logged_only();
                                 <li><a class="color7" href="view_commande.php">Commande</a></li>
                                 <li><a class="color7" href="view_produit.php">Produit</a></li> 
                                 <li><a class="color7" href="view_client.php">Client</a></li>   
-                                <li><a class="color7" href="view_categorie.php">Categorie</a></li>  
+                                <li><a class="color7" href="view_category.php">Categorie</a></li>  
                             </ul>
                         </div>
                     </div>

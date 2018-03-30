@@ -6,31 +6,32 @@
                 <div class="card">
                     <div class="account-in">
                         <div class="container">
-                            <form method="POST" action="ajax/addAccount.php"> 
+                            <form method="POST" action="ajax/addAccount.php" data-toggle="validator"> 
                                 <div class="register-top-grid grid_1">
                                     <h1>Inscription</h1>
                                     <div>
-                                        <span>Nom<label>*</label></span><input name="nom" type="text"> 
+                                        <span>Nom<label>*</label></span>
+                                        <input name="nom" type="text" required> 
                                     </div>
                                     <div>
                                         <span>Mot de passe<label>*</label></span>
-                                        <input name="pass" type="password"> 
+                                        <input name="pass" type="password" required> 
                                     </div>
                                     <div>
                                         <span>Confirmation<label>*</label></span>
-                                        <input name="confirm" type="password"> 
+                                        <input name="confirm" type="password" required> 
                                     </div>
                                     <div>
                                         <span>Adresse<label>*</label></span>
-                                        <input name="adresse" type="text"> 
+                                        <input name="adresse" type="text" required> 
                                     </div>
                                     <div>
                                         <span>Tel<label>*</label></span>
-                                        <input name="tel" type="text"> 
+                                        <input name="tel" type="tel" required> 
                                     </div>
                                     <div>
                                         <span>Email<label>*</label></span>
-                                        <input name="email" type="text"> 
+                                        <input name="email" type="email" required> 
                                     </div>
 
                                     <div class="clearfix"> </div>
