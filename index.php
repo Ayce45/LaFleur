@@ -53,7 +53,13 @@ session_start();
                             </a>                        
                         </div> 
                     </div>
+                    <?php if (isset($_SESSION['auth'])) { ?>
+                    <div class="header_top_right">
+                        <div class="box_11"><a href="myorder.php">
+                                <h4 style="color: black"><i class="fa fa-user"></i>  <?= $_SESSION['auth'] ?></h4>                       
+                    </div>
                 </div>
+                    <?php }?>
                 <div class="header_bottom">
                     <div class="logo">
                         <h1><a href=""><span class="m_1">L</span>AFLEUR</a></h1>
@@ -68,7 +74,11 @@ session_start();
                             ?>                            
                             <li><a class="color7" href="contact.php">Contact</a></li>
                             <li><a class="color7" href="inscription.php">Inscription</a></li>
-                            <li><a class="color7" href="admin/"><i class ="fa fa-lock"></i></a></li>
+                            <?php if(empty($_SESSION['auth'])) { ?>
+                            <li><a class="color7" href= "connexion.php?id=0"><i class ="fa fa-lock"></i></a></li>
+                            <?php } else { ?>
+                            <li><a class="color7" href="logout.php"><i class ="fa fa-sign-out"></i></a></li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -95,4 +105,3 @@ session_start();
 <script>
     $('#Cart_total').load('ajax/getCartPrice.php');
 </script>
-

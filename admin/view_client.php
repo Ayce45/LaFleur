@@ -44,11 +44,11 @@ include 'connect.php';
                                         <td><?= $donnees["clt_tel"] ?></td>
                                         <td><?= $donnees["clt_email"] ?></td>
                                         <td> <button class="btn btn-danger btn-sm"  onclick="window.location.href = 'deleteClient.php?id=<?= $donnees["clt_code"] ?>'" data-toggle="modal"><i class="fa fa-trash-o"></i></button>	                                    
-                                            <button class="btn btn-sucess" data-target="#modifyClient<?= $donnees["clt_code"] ?>" data-toggle="modal" ><i class="fa fa-key"></i></button>
-                                        <button class="btn btn-info btn-sm"  onclick="window.location.href = '?id=<?= $donnees["clt_code"] ?>'" data-toggle="modal"><i class="fa fa-edit"></i></button> </td>                               
+                                            <button class="btn btn-sucess" data-target="#modifyPassword<?= $donnees["clt_code"] ?>" data-toggle="modal" ><i class="fa fa-key"></i></button>
+                                            <button class="btn btn-info btn-sm"  data-target="#modifyClient<?= $donnees["clt_code"] ?>" data-toggle="modal"><i class="fa fa-edit"></i></button> </td>                               
                                     </tr>
 
-                                    <div class="modal fade in" tabindex="1" role="dialog" id="modifyClient<?= $donnees["clt_code"] ?>">        <div class="modal-dialog" role="document">
+                                    <div class="modal fade in" tabindex="1" role="dialog" id="modifyPassword<?= $donnees["clt_code"] ?>">        <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <form method="GET" action="../ajax/modifyPassword.php">
                                                     <div class="modal-header">
@@ -68,7 +68,44 @@ include 'connect.php';
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" onclick="window.location.href = '../ajax/modifyPW.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
+                                                        <button type="submit" onclick="window.location.href = '../ajax/modifyPassword.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
+                                                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade in" tabindex="1" role="dialog" id="modifyClient<?= $donnees["clt_code"] ?>">        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="GET" action="../ajax/modifyClient.php">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title text-center">⚠ Modification donnée utilisateur ⚠</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div>
+                                                            <span>Nom*         <label></label></span>
+                                                            <input name="id" type="hidden" value="<?= $donnees["clt_code"] ?>" >
+                                                            <input name="name" type="text" value ="<?= $donnees["clt_nom"] ?>"> 
+                                                        </div>
+                                                        <div>
+                                                            <span>Adresse*<label></label></span>
+                                                            <input name="adresse" type="text" value="<?= $donnees["clt_adresse"] ?>">
+                                                        </div>
+                                                        <div>
+                                                            <span>Téléphone*<label></label></span>
+                                                            <input name="tel" type="text" value="<?= $donnees["clt_tel"] ?>" >
+                                                        </div>
+                                                        <div>
+                                                            <span>Mail*<label></label></span>
+                                                            <input name="mail" type=text" value="<?= $donnees["clt_email"] ?>" >
+
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" onclick="window.location.href = '../ajax/modifyClient.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
                                                         <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
                                                     </div>
                                                 </form>

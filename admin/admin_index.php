@@ -45,7 +45,7 @@ logged_only();
             <div class="container">   
                 <div class="header_top">
                     <div class="header_top_left">
-                        <form action="logout.php">
+                        <form action="../logout.php">
                             <button type="submit" class="btn btn-default btn-sm">
                                 <span class="fas fa-sign-out-alt"></span> Déconnexion
                             </button>

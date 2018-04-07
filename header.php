@@ -2,7 +2,6 @@
 session_start();
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
-    
 }
 ?>
 <!DOCTYPE HTML>
@@ -53,10 +52,17 @@ if (!isset($_SESSION['cart'])) {
                     <div class="header_top">
                         <div class="header_top_left">
                             <div class="box_11"><a href="checkout.php">
-                                    <h4><p>Panier : <span id="Cart_total">0.00</span> € (<span id="Cart_quantity" class="simpleCart_quantity"><?= $nbrProducts ?></span> produits)</p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
+                                    <h4><img src="images/bag.png" alt=""/><p>Panier : <span id="Cart_total">0.00</span> € (<span id="Cart_quantity" class="simpleCart_quantity"><?= $nbrProducts ?></span> produits)</p><div class="clearfix"> </div></h4>
                                 </a>                        
                             </div> 
                         </div>
+                        <?php if (isset($_SESSION['auth'])) { ?>
+                            <div class="header_top_right">
+                                <div class="box_11"><a href="myorder.php">
+                                        <h4 style="color: black"><i class="fa fa-user"></i>  <?= $_SESSION['auth'] ?></h4>                       
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                     <div class="header_bottom">
                         <div class="logo">
@@ -69,11 +75,14 @@ if (!isset($_SESSION['cart'])) {
                                 while ($donnees = $reponse->fetch()) {
                                     echo '<li><a class="color7" href="listpdt.php?cat=' . $donnees["cat_code"] . '">' . $donnees["cat_libelle"] . '</a></li>';
                                 }
-                                ?>
-                                <li><a class="color7" href="contact.php">Contact</a></li> 
+                                ?>                            
+                                <li><a class="color7" href="contact.php">Contact</a></li>
                                 <li><a class="color7" href="inscription.php">Inscription</a></li>
-                                <li><a class="color7" href="admin/"><i class ="fa fa-lock"></i></a></li>
-                                                               
+                                <?php if (empty($_SESSION['auth'])) { ?>
+                                    <li><a class="color7" href= "connexion.php?id=0"><i class ="fa fa-lock"></i></a></li>
+                                <?php } else { ?>
+                                    <li><a class="color7" href="logout.php"><i class ="fa fa-sign-out"></i></a></li>
+                                        <?php } ?>
                             </ul>
                         </div>
                     </div>

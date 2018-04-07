@@ -101,13 +101,18 @@
                                 </br>
                                 <div class="clearfix"></div>
                                 <form method="POST" action="ajax/addOrder.php" name="login">
-                                    <p><label>Code Client        </label><input type="text"  id="utilisateur" name="utilisateur" ></p>
-                                    </br>
-                                    <p><label>Mot de passe </label><input type="password" name="mdp" ></p>
-                                    <div class="modal-footer">
+                                    <?php if (isset($_SESSION['auth'])) {
+                                        ?>
+                                        <input class="hidden" type="text"  name="utilisateur" value="<?= $_SESSION['auth'] ?>">
+                                    <?php } ?>    
+                                        <div class="modal-footer" style="border-top: none;margin-top: -25px">
+                                        
+                                        <?php if (!empty($_SESSION['cart'])){ ?>
                                         <button type="submit" class="btn btn-primary" >COMMANDER</button>
+                                        <?php }?>
                                     </div>  
                                 </form>
+
                             </div>
                         </div>
 

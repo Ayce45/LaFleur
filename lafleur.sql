@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 04 avr. 2018 à 09:59
+-- Généré le :  ven. 06 avr. 2018 à 08:49
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -21,26 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `lafleur`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `admin`
---
-
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `username` varchar(16) NOT NULL DEFAULT '',
-  `password` varchar(32) NOT NULL DEFAULT '',
-  PRIMARY KEY (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `admin`
---
-
-INSERT INTO `admin` (`username`, `password`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -88,7 +68,8 @@ CREATE TABLE IF NOT EXISTS `clientconnu` (
 INSERT INTO `clientconnu` (`clt_code`, `clt_nom`, `clt_adresse`, `clt_tel`, `clt_email`, `clt_motPasse`) VALUES
 ('c0001', 'Dupont', '12, rue haute 75001 Paris', '01 05 22 35 97', 'dupont@wanadoo.fr', '47bce5c74f589f4867dbd57e9ca9f808'),
 ('c0002', 'Dubois', '4, bld d\'Alsace 75002 Paris', '01 44 97 62 54', 'dubois@club-internet.fr', '08f8e0260c64418510cefb2b06eee5cd'),
-('c0003', 'Durand', '5, all?e des Ifs 80000 Amiens', '03 22 79 64 56', 'durand@free.fr', '9df62e693988eb4e1e1444ece0578579');
+('c0003', 'Durand', '5, all?e des Ifs 80000 Amiens', '03 22 79 64 56', 'durand@free.fr', '9df62e693988eb4e1e1444ece0578579'),
+('admin', 'admin', 'admin', 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -104,13 +85,6 @@ CREATE TABLE IF NOT EXISTS `commande` (
   PRIMARY KEY (`cde_moment`,`cde_client`),
   KEY `FK2` (`cde_client`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `commande`
---
-
-INSERT INTO `commande` (`cde_moment`, `cde_client`, `cde_date`) VALUES
-('1522402436', 'c0001', '2018-03-30');
 
 -- --------------------------------------------------------
 
@@ -128,18 +102,6 @@ CREATE TABLE IF NOT EXISTS `contenir` (
   KEY `FK4` (`cde_client`),
   KEY `FK5` (`produit`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `contenir`
---
-
-INSERT INTO `contenir` (`cde_moment`, `cde_client`, `produit`, `quantite`) VALUES
-('1522402436', 'c0001', 'm03', 1),
-('1522402436', 'c0001', 'm02', 1),
-('1522402436', 'c0001', 'm01', 1),
-('1522402436', 'c0001', 'b03', 1),
-('1522402436', 'c0001', 'b02', 1),
-('1522402436', 'c0001', 'b01', 1);
 
 -- --------------------------------------------------------
 
@@ -171,7 +133,8 @@ INSERT INTO `produit` (`pdt_ref`, `pdt_designation`, `pdt_prix`, `pdt_image`, `p
 ('m03', 'Mélange varié de 10 plantes à massif', '15.00', 'massif_melange', 'mas'),
 ('r03', 'Rosier arbuste', '8.00', 'rosiers_arbuste', 'ros'),
 ('r02', 'Une variété sélectionnée pour son parfum', '9.00', 'rosiers_parfum', 'ros'),
-('r01', '1 pied spécial grandes fleurs', '20.00', 'rosiers_gdefleur', 'ros');
+('r01', '1 pied spécial grandes fleurs', '20.00', 'rosiers_gdefleur', 'ros'),
+('r04', 'Rosier bleu', '13.00', 'rosier_bleu.jpg', 'ros');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

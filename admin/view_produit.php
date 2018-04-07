@@ -44,8 +44,58 @@ include 'connect.php';
                                             <td><?= $donnees["pdt_categorie"] ?></td>
                                             <td><a class="color7" target="_blank" href="../images/<?= $donnees["pdt_image"] ?>"><?= $donnees["pdt_image"] ?></a></td>
                                             <td> <button class="btn btn-danger btn-sm"  onclick="window.location.href = 'deleteProduct.php?id=<?= $donnees["pdt_ref"] ?>'" data-toggle="modal"><i class="fa fa-trash-o"></i></button>	 
-                                                <button class="btn btn-info btn-sm" data-target="#modifyProduit<?= $donnees["pdt_ref"] ?>" data-toggle="modal" ><i class="fa fa-edit"></i></button>	  </td>
+                                                <button class="btn btn-info btn-sm" data-target="#modifyProduct<?= $donnees["pdt_ref"] ?>" data-toggle="modal" ><i class="fa fa-edit"></i></button>	  </td>
                                         </tr>
+
+
+                                        <div class="modal fade in" tabindex="1" role="dialog" id="modifyProduct<?= $donnees["pdt_ref"] ?>">        <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form method="POST" action="../ajax/modifyProduct.php">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title text-center">⚠ Modification du produit ⚠</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div>
+                                                                <span>Désignation*     <label></label></span>
+                                                                <input name="ref" type="hidden" value="<?= $donnees["pdt_ref"] ?>" >
+                                                                <input name="name" type="text" value="<?= $donnees["pdt_designation"] ?>"> 
+                                                            </div>
+                                                            <div>
+                                                                <span>Prix *      <label></label></span>                                                              
+                                                                <input name="price" type="float" value="<?= $donnees["pdt_prix"] ?>" >
+                                                            </div>
+                                                            <div>
+                                                                <span>Catégorie*    </span>
+                                <!--                                <input name="categorie" type="text"> -->
+                                                                <select name="categorie" >
+																<?php                                                                     
+                                                                    $reponse1 = $bdd->query("SELECT * FROM categorie");
+                                                                    while ($donnees1 = $reponse1->fetch()) {
+                                                                        
+																		If($donnees1["cat_code"] == $donnees["pdt_categorie"]){
+																			echo'<option value="'.$donnees1["cat_code"].'" selected>'.$donnees1["cat_libelle"].'</option>';
+																		}
+																		else{
+                                                                         echo'<option value="'.$donnees1["cat_code"].'" >'.$donnees1["cat_libelle"].'</option>';
+																		}
+																		 
+                                                                     } ?>
+																	
+                                                                </select>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" onclick="window.location.href = '../ajax/modifyProduct.php?id=<?= $donnees["pdt_ref"] ?>'" class="btn btn-primary">Valider</button>                    
+                                                            <button type="button" class="btn btn-secondary " data-dismiss="modal">Annuler</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     <?php } ?>
 
@@ -87,6 +137,7 @@ include 'connect.php';
                                     $reponse = $bdd->query("SELECT * FROM categorie");
                                     while ($donnees = $reponse->fetch()) {
                                         ?>
+										
                                         <option value="<?= $donnees["cat_code"] ?>"><?= $donnees["cat_libelle"] ?></option>
                                     <?php } ?>
                                 </select>
@@ -97,8 +148,8 @@ include 'connect.php';
 
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Oui</button>                    
-                            <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
+                            <button type="submit" class="btn btn-primary">Valider</button>                    
+                            <button type="button" class="btn btn-secondary " data-dismiss="modal">Annuler</button>
                         </div>
                     </form>
 
