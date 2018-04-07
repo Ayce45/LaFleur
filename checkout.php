@@ -124,26 +124,6 @@
     </div>
 
 
-
-    <div class="modal fade in" tabindex="-1" role="dialog" id="exampleModalLongSucess">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center">⚠ Demande d'achat ⚠</h5>
-                </div>
-                <div class="modal-body">
-                    <p class="text-center">Etes-vous sûr(e) de vouloir procéder a la demande d'achat ?</p>
-                    </br>
-                    <p class="text-center"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="destroySession()" data-dismiss="modal">OUI</button>
-                    <button type="button" class="btn btn-secondary " data-dismiss="modal">QUITTER</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade in" tabindex="-1" role="dialog" id="exampleModalLongAll">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

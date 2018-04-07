@@ -17,5 +17,5 @@ $req= $bdd-> exec($sql);
 $sql="DELETE From categorie WHERE cat_code='$delete_id'";
 $req= $bdd-> exec($sql);
 
-echo "<script>window.location.replace('view_category.php')</script>";
+echo "<script>window.location.replace('../view_category.php')</script>";
 ?>

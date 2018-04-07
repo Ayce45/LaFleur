@@ -13,7 +13,7 @@ $sql = "UPDATE clientconnu SET clt_motPasse ='$PW' WHERE clt_code='$code'";
 If ($PW == $CPW || empty($CPW) || empty($PW)) {
     $bdd->exec($sql);
     
-    header('Location: ../admin/view_client.php');
+    header('Location: ../view_client.php');
 }
 ?>
 

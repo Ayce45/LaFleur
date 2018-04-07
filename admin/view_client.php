@@ -43,14 +43,14 @@ include 'connect.php';
                                         <td><?= $donnees["clt_adresse"] ?></td>
                                         <td><?= $donnees["clt_tel"] ?></td>
                                         <td><?= $donnees["clt_email"] ?></td>
-                                        <td> <button class="btn btn-danger btn-sm"  onclick="window.location.href = 'deleteClient.php?id=<?= $donnees["clt_code"] ?>'" data-toggle="modal"><i class="fa fa-trash-o"></i></button>	                                    
+                                        <td> <button class="btn btn-danger btn-sm"  onclick="window.location.href = 'ajax/deleteClient.php?id=<?= $donnees["clt_code"] ?>'" data-toggle="modal"><i class="fa fa-trash-o"></i></button>	                                    
                                             <button class="btn btn-sucess" data-target="#modifyPassword<?= $donnees["clt_code"] ?>" data-toggle="modal" ><i class="fa fa-key"></i></button>
                                             <button class="btn btn-info btn-sm"  data-target="#modifyClient<?= $donnees["clt_code"] ?>" data-toggle="modal"><i class="fa fa-edit"></i></button> </td>                               
                                     </tr>
 
                                     <div class="modal fade in" tabindex="1" role="dialog" id="modifyPassword<?= $donnees["clt_code"] ?>">        <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                                <form method="GET" action="../ajax/modifyPassword.php">
+                                                <form method="POST" action="ajax/modifyPassword.php">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title text-center">⚠ Modification mot de passe ⚠</h5>
                                                     </div>
@@ -68,7 +68,7 @@ include 'connect.php';
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" onclick="window.location.href = '../ajax/modifyPassword.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
+                                                        <button type="submit" onclick="window.location.href = 'ajax/modifyPassword.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
                                                         <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
                                                     </div>
                                                 </form>
@@ -78,7 +78,7 @@ include 'connect.php';
                                     </div>
                                     <div class="modal fade in" tabindex="1" role="dialog" id="modifyClient<?= $donnees["clt_code"] ?>">        <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                                <form method="GET" action="../ajax/modifyClient.php">
+                                                <form method="GET" action="ajax/modifyClient.php">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title text-center">⚠ Modification donnée utilisateur ⚠</h5>
                                                     </div>
@@ -105,7 +105,7 @@ include 'connect.php';
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" onclick="window.location.href = '../ajax/modifyClient.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
+                                                        <button type="submit" onclick="window.location.href = 'ajax/modifyClient.php?id=<?= $donnees["clt_code"] ?>'" class="btn btn-primary">Oui</button>                    
                                                         <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
                                                     </div>
                                                 </form>
@@ -126,7 +126,7 @@ include 'connect.php';
 
     <div class="modal fade in" tabindex="1" role="dialog" id="createclient">        <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="POST" action="../ajax/addAccountAdmin.php" data-toggle="validator">
+                <form method="POST" action="ajax/addAccountAdmin.php" data-toggle="validator">
                     <div class="modal-header">
                         <h5 class="modal-title text-center">⚠ CREATION CLIENT ⚠</h5>
                     </div>

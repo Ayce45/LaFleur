@@ -53,7 +53,7 @@ include 'connect.php';
 
                                                             <div class="row">
                                                                 <div class="col-xs-2 col-md-2" style="margin-left: 20px">
-                                                                    <img class="img-responsive" src="../images/<?= $ligne["pdt_image"] ?>" alt="prewiew">
+                                                                    <img class="img-responsive" src="images/<?= $ligne["pdt_image"] ?>" alt="prewiew">
                                                                 </div>
                                                                 <div class="col-xs-4 col-md-6">
                                                                     <h4 class="product-name"><strong><?= $ligne["pdt_designation"] ?></strong></h4><h4><small>Référence : <?= $ligne["pdt_ref"] ?></small></h4>

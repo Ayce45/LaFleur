@@ -37,12 +37,12 @@ include 'connect.php';
                                             <!--here showing results in the table -->
                                             <td><?= $donnees["cat_code"] ?></td>
                                             <td><?= $donnees["cat_libelle"] ?></td>
-                                            <td> <button class="btn btn-danger btn-sm"  onclick="window.location.href = 'deleteCategorie.php?id=<?= $donnees["cat_code"] ?>'" data-toggle="modal"><i class="fa fa-trash-o"></i></button>
+                                            <td> <button class="btn btn-danger btn-sm"  data-target="#deleteCat<?= $donnees["cat_code"] ?>" data-toggle="modal"><i class="fa fa-trash-o"></i></button>
                                                 <button class="btn btn-info btn-sm"  data-target="#modifyCat<?= $donnees["cat_code"] ?>" data-toggle="modal"><i class="fa fa-edit"></i></button> </td>
                                         </tr>
                                         <div class="modal fade in" tabindex="1" role="dialog" id="modifyCat<?= $donnees["cat_code"] ?>">        <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
-                                                    <form method="POST" action="../ajax/modifyCat.php">
+                                                    <form method="POST" action="ajax/modifyCat.php">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title text-center">⚠ Modification catégorie ⚠</h5>
                                                         </div>
@@ -62,14 +62,31 @@ include 'connect.php';
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="submit" onclick="window.location.href = '../ajax/modifyCat.php?id=<?= $donnees["cat_code"] ?>'" class="btn btn-primary">Oui</button>                    
+                                                            <button type="submit" onclick="window.location.href = 'ajax/modifyCat.php?id=<?= $donnees["cat_code"] ?>'" class="btn btn-primary">Oui</button>                    
                                                             <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
                                                         </div>
                                                     </form>
 
                                                 </div>
                                             </div>
-                                        </div>  
+                                        </div>
+                                        <div class="modal fade in" tabindex="-1" role="dialog" id="deleteCat<?= $donnees["cat_code"] ?>">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title text-center">⚠ ATTENTION ⚠</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="text-center">Etes-vous sûr(e) de vouloir supprimer cete magnifique categorie ?</p>
+                                                        <p class="text-center"> Cela va aussi supprimer tout les produits de cette categorie ! </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary" onclick="window.location.href = 'ajax/deleteCategorie.php?id=<?= $donnees["cat_code"] ?>'" data-dismiss="modal">Oui, supprimer</button>
+                                                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Non</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     <?php } ?>
 
@@ -82,7 +99,7 @@ include 'connect.php';
         </div>
         <div class="modal fade in" tabindex="1" role="dialog" id="createcategory">        <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form method="POST" action="../ajax/addCategoryAdmin.php" data-toggle="validator">
+                    <form method="POST" action="ajax/addCategoryAdmin.php" data-toggle="validator">
                         <div class="modal-header">
                             <h5 class="modal-title text-center">⚠ CREATION PRODUIT ⚠</h5>
                         </div>

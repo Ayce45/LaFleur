@@ -12,7 +12,7 @@ $sql3="UPDATE produit SET pdt_categorie='$ref' WHERE pdt_categorie='$test'";
     $bdd->exec($sql);
     $bdd->exec($sql2);
     $bdd->exec($sql3);
-header("Location: ../admin/view_category.php");
+header("Location: ../view_category.php");
 ?>
 
 

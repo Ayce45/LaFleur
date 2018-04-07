@@ -12,5 +12,5 @@ $query->execute(array(
     'ref' => $ref,
     'desi' => $desi
 ));
-header('Location: ../admin/view_category.php');
+header('Location: ../view_category.php');
 ?>

@@ -55,5 +55,5 @@ $categorie = $_REQUEST['categorie'];
 
 $query = ("INSERT INTO produit SET pdt_ref='$ref', pdt_designation='$desi', pdt_prix=$prix, pdt_image='$image', pdt_categorie='$categorie'");
 $req = $bdd-> exec($query);
-header('Location: ../admin/view_produit.php');
+header('Location: ../view_produit.php');
 ?>

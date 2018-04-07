@@ -12,5 +12,5 @@ $req= $bdd-> exec($sql);
     echo "<script>window.open('view_users.php?deleted=user has been deleted','_self')</script>";
 }
 */
-echo "<script>window.location.replace('view_produit.php')</script>";
+echo "<script>window.location.replace('../view_produit.php')</script>";
 ?>
