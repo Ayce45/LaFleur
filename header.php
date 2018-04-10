@@ -52,7 +52,7 @@ if (!isset($_SESSION['cart'])) {
                     <div class="header_top">
                         <div class="header_top_left">
                             <div class="box_11"><a href="checkout.php">
-                                    <h4><img src="images/bag.png" alt=""/><p>Panier : <span id="Cart_total">0.00</span> € (<span id="Cart_quantity" class="simpleCart_quantity"><?= $nbrProducts ?></span> produits)</p><div class="clearfix"> </div></h4>
+                                    <h4><p>Panier : <span id="Cart_total">0</span> € (<span id="Cart_quantity" class="simpleCart_quantity"><?= $nbrProducts ?></span> produits)</p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
                                 </a>                        
                             </div> 
                         </div>
