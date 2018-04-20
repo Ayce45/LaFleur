@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/LAFLEUR/admin/view_commande.php</file>
-            <file>file:/G:/LAFLEUR/checkout.php</file>
-            <file>file:/G:/LAFLEUR/admin/header.php</file>
-            <file>file:/G:/LAFLEUR/admin/view_produit.php</file>
-            <file>file:/G:/LAFLEUR/ajax/addOrder.php</file>
-            <file>file:/G:/LAFLEUR/admin/index.php</file>
+            <file>file:/G:/LaFleur/admin/view_produit.php</file>
+            <file>file:/G:/LaFleur/admin/ajax/addProductAdmin.php</file>
         </group>
     </open-files>
 </project-private>
